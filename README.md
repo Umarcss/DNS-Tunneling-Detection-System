@@ -1,6 +1,5 @@
 # DNS Tunneling Detection System
 ### Machine Learning Algorithms for DNS Tunneling Detection
-**B.Sc. Final Year Project — Mewar International University, Faculty of Computing**
 
 ---
 
@@ -308,8 +307,3 @@ Run: `streamlit run app.py --server.port 8502` and open `http://localhost:8502`
 
 ---
 
-## Authors
-
-**B.Sc. Final Year Project**
-Mewar International University
-Faculty of Computing

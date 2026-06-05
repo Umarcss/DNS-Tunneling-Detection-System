@@ -126,8 +126,6 @@ with st.sidebar:
     st.divider()
     st.markdown("**About**")
     st.caption(
-        "B.Sc. Final Year Project\n\n"
-        "Mewar International University\n\n"
         "Machine Learning Algorithms for\nDNS Tunneling Detection System"
     )
 
@@ -174,7 +172,7 @@ with chart_col1:
             paper_bgcolor="rgba(0,0,0,0)",
             font_color="white",
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
     else:
         st.info("No data yet — start simulate.py")
 
@@ -197,7 +195,7 @@ with chart_col2:
             font_color="white",
             legend_title_text="",
         )
-        st.plotly_chart(fig2, use_container_width=True)
+        st.plotly_chart(fig2, width="stretch")
     else:
         st.info("No data yet — start simulate.py")
 
@@ -218,7 +216,7 @@ with chart_col3:
             paper_bgcolor="rgba(0,0,0,0)",
             font_color="white",
         )
-        st.plotly_chart(fig3, use_container_width=True)
+        st.plotly_chart(fig3, width="stretch")
     else:
         st.info("No data yet — start simulate.py")
 
@@ -247,7 +245,7 @@ if not df_logs.empty:
         font_color="white",
         margin=dict(t=10, b=10, l=10, r=10),
     )
-    st.plotly_chart(fig4, use_container_width=True)
+    st.plotly_chart(fig4, width="stretch")
 else:
     st.info("No data yet — start simulate.py to generate live traffic.")
 
@@ -269,8 +267,8 @@ if not df_threats.empty:
         except Exception:
             return ""
 
-    styled = df_threats.style.applymap(_style_risk, subset=["Risk Level (%)"])
-    st.dataframe(styled, use_container_width=True, hide_index=True)
+    styled = df_threats.style.map(_style_risk, subset=["Risk Level (%)"])
+    st.dataframe(styled, width="stretch", hide_index=True)
 
     # Acknowledge button
     ack_col, dl_col = st.columns([1, 3])
@@ -314,7 +312,7 @@ with st.expander("View Full DNS Traffic Log (Last 200 Entries)", expanded=False)
 
         st.dataframe(
             display_df.style.apply(_row_color, axis=1),
-            use_container_width=True,
+            width="stretch",
             hide_index=True,
         )
     else:
