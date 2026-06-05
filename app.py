@@ -28,6 +28,12 @@ st.markdown("""
 .stMetric [data-testid="stMetricValue"] { font-size:1.9rem !important; }
 .threat-badge { background:#ff4b4b; color:white; padding:2px 8px; border-radius:4px; font-size:0.78rem; }
 .safe-badge  { background:#21c354; color:white; padding:2px 8px; border-radius:4px; font-size:0.78rem; }
+/* Hide Streamlit Deploy button and top toolbar */
+[data-testid="stToolbar"] { display: none !important; }
+[data-testid="stDecoration"] { display: none !important; }
+.stDeployButton { display: none !important; }
+#MainMenu { display: none !important; }
+header[data-testid="stHeader"] { display: none !important; }
 </style>
 """, unsafe_allow_html=True)
 
